@@ -103,9 +103,17 @@ Here the challenge will be the persistent storage for the different versions. Th
 The final user will be able to write the report in a shiny app, the first *tabsetPanel* will contain a standardize report structure defined in the *ui* using *textAreaInput*. 
 In this tabsetPanel the user will write the report using **knitr**, save it and be able to download the pdf file. After the first submission the user will be able to see the previous report versions and change it as they need it. To do this I will use **shinyjs** package. 
 
-This first tabset should look like:
+This first tabset should look like this if is the first submission:
 
 https://github.com/natydasilva/GSOC2017-metawrite/blob/master/Tab1gen.png
+
+https://github.com/natydasilva/GSOC2017-metawrite/blob/master/tab1download.png
+
+And at the end will be available 
+
+
+https://github.com/natydasilva/GSOC2017-metawrite/blob/master/tab1version.png
+
 
 3. Visualization and summary information
 

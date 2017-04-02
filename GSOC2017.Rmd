@@ -1,10 +1,9 @@
 ---
 title: "GSOC2017"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
-
 
 ## Project info
 
@@ -24,9 +23,9 @@ I have been working in R for a long time, and I have experience doing shiny
 
 I have completed my M.S. in Statistics at Iowa State University working in network meta-analysis with Bayesian inference in Spring 2014. From my M.S. thesis I have published the paper "Mixed treatment comparison meta-analysis of porcine circovirus type 2 (PCV2) vaccines used in piglets" available in 
 ([paper-meta-analysis](http://www.sciencedirect.com/science/article/pii/S0167587714003444)).
-I have worked in different meta-analysis projects as an RA at ISU, in my webpage you can find other publications I have in this topic ([My-webpage](http://ndasilva.public.iastate.edu/page.html))
+I have worked in different meta-analysis projects as an RA at ISU (College of Veterinary Medicine) with Annette O'Connor. In my webpage you can find other publications I have in meta-analysis. ([My-webpage](http://ndasilva.public.iastate.edu/page.html))
 
-I qualifies for this project because I have experience in R and in meta-analysis and I would like to work in this project as part of GSOC 2017.
+I qualifies for this project because I have experience in R, meta-analysis and I would like to work in this project as part of GSOC 2017.
 
 ## Contact Information 
 
@@ -60,16 +59,16 @@ I have  weekly meetings with the mentors at ISU to work in this project.
 
 ## Coding Plan and Methods
 
-### Introduction 
+### Project Introduction 
 
-Systematic reviews are an approach used by public health agencies such as the World Health Organization to understand how treatments are effective and approach to disease control. Systematic reviews  in the literature often include a meta-analysis that summarizes the findings of multiple studies. It is critical that such reviews are updated rapidly as new scientific information becomes available, so the best evidence is used for the best advise. However, the current peer-reviewed journal based approach to publishing systemic reviews means that reviews can rapidly become out of date and updating is often delayed by the publication model. Living systematic reviews have been proposed as a new approach to dealing with this problem. The main concept of a living review is to enable rapid updating of systematic reviews as new research becomes available, while also ensuring a transparent process and reproducible review. 
+Systematic reviews are an approach used by public health agencies such as the World Health Organization to understand how treatments are effective and approach to disease control. Systematic reviews  in the literature often include a meta-analysis that summarizes the findings of multiple studies. It is critical that such reviews are updated rapidly as new scientific information becomes available, so the best evidence is used for the best advice. However, the current peer-reviewed journal based approach to publishing systematic reviews means that reviews can rapidly become out of date and updating is often delayed by the publication model. Living systematic reviews have been proposed as a new approach to dealing with this problem. The main concept of a living review is to enable rapid updating of systematic reviews as new research becomes available, while also ensuring a transparent process and reproducible review. 
 
 **metawRite** package have the objective to simplify the review, write and update in a systematic review. This package will be an approach to do a living systematic review easily and available for all.
  The  goal is to combine in the package, the writing and analysis of the review that also enables versioning and updating. This package will allow an easy and effective way to display a living systematic review available in a web-based display. 
 
-Three main tasks are needed to have an effective living systematic review; the ability to produce dynamic reports, availability online with an interface that enables end users to understand the data and the ability to efficiently update the review(and any meta-analyis) with new research seamless.
+Three main tasks are needed to have an effective living systematic review; the ability to produce dynamic reports, availability online with an interface that enables end users to understand the data and the ability to efficiently update the review(and any meta-analysis) with new research seamless.
 
-**metawRite** will cover these tree task integrated in a friendly web based environment for the final user. This package is not a new meta analysis package instead will be flexible enough to read different output models from the most used meta-analysis packages in R, organize the information and display the results in an user driven interactive dash board. The main function of this package will display a modern web-based application for update a living systematic review.
+**metawRite** will cover these three task integrated in a friendly web based environment for the final user. This package is not a new meta analysis package instead will be flexible enough to read different output models from the most used meta-analysis packages in R, organize the information and display the results in an user driven interactive dashboard. The main function of this package will display a modern web-based application for update a living systematic review.
 This package combines the power of R and shiny to get a dynamic reports and up to date meta-analysis results remaining user friendly. The package has the potential to be used by a large number of groups that conduct and update systematic review such as What Works clearing house (WWC) – which reviews education interventions, Campbell Collaboration (cambell-collaboration) that includes reviews on topics such as social and criminal justice issues and many other social science topics, the Collaboration for Environment Evidence (environment-evidence) and food production and security (syreaf). 
 
 
@@ -79,11 +78,15 @@ To complete this project I plan to split my work in three main components:
 
 1. Data transformation and results computations.
 
- In this part I will write funcions to facilitate the data transformation and manipulation to run classic pairwise meta-analysis. 
- Two fit classic meta-analysis models I will use initially  **metafor** and **meta** packages.
- The idea is to make available functions to facilitate the analysis to the final user of our app. 
-For example, * pairwise_metafor* will be a funtion to restructure data and run pairwise meta-analysis results using  **metafor** package. The model output will be saved in an .rda in list structure to be easily in the final shinyapp. 
+ In this part I will write functions to facilitate the data transformation and manipulation to run classic pairwise meta-analysis. 
+ To fit classic meta-analysis models I will use initially  **metafor** and **meta** packages.
+ The idea is to make available functions to facilitate the analysis to the final user of our application. 
+For example, `pairwise_metafor` will be a function to restructure data and run pairwise meta-analysis results using  **metafor** package. The model output will be saved in an .rda with a list structure. The data generated in this step will be the main inputs for the final shiny app. 
 
+In a similar way `pairwise_meta`  will restructure the data and run pairwise meta-analysis but using **meta** instead of **metafor** package to fit the model.
+
+
+The package documentation will be done using **roxygen2** package, below I show the help example for `pairwise_meta` function.
 ```{r}
 #' @usage pairwise_metafor(dataini, ...)
 #' @param dataini Data frame in an arm-based format (e.g. input format for WinBUGS)
@@ -96,87 +99,87 @@ For example, * pairwise_metafor* will be a funtion to restructure data and run p
 
 2. Writing dynamic reports
 
-The ability to produce dynamic reports is a key characteristic of a living systematic review. 
+A key characteristic of a living systematic (LSR) review is the ability to produce dynamic reports. 
 To get reproducible and dynamic reports I will use **knitr** package. A second main task in LSR is to make the reports available online with an interface that enables end users to understand the data and the ability to efficiently update the review. I will use **shiny** combined with **knitr** to get this second functionality.
-Here the challenge will be the persistent storage for the different versions. The storage can be local or remote and there are a lot of different approaches.  At initial stage I will design the package to get local persistent storage but I think maybe will be more apropriate to do a remote storage.
- 
-The final user will be able to write the report in a shiny app, the first *tabsetPanel* will contain a standardize report structure defined in the *ui* using *textAreaInput*. 
-In this tabsetPanel the user will write the report using **knitr**, save it and be able to download the pdf file. After the first submission the user will be able to see the previous report versions and change it as they need it. To do this I will use **shinyjs** package. 
-
-This first tabset should look like this if is the first submission:
-
-https://github.com/natydasilva/GSOC2017-metawrite/blob/master/Tab1gen.png
-
-https://github.com/natydasilva/GSOC2017-metawrite/blob/master/tab1download.png
-
-And at the end will be available 
+Here the challenge will be the persistent storage for the different versions. The storage can be local or remote and there are a lot of different approaches to do this.  At initial stage I will design the package to get local persistent storage but I think maybe will be more appropriate to do a remote storage.
 
 
-https://github.com/natydasilva/GSOC2017-metawrite/blob/master/tab1version.png
+The final user will be able to write the report in a shiny app, the first *tabsetPanel* will contain a standard report structure using `textAreaInput` in the user-interface (`ui`). 
+In this `tabsetPanel` the user will write the report using **knitr**, save it and be able to download the pdf file. After the first submission the user will be able to see the previous report versions and change it as they need it. To do this I will use **shinyjs** package. 
 
+This first tabset should look like this for the first submission:
+
+<!-- ![Panel 1 in shinyapp, in this panel a dynamic report can be write, saved and downloaded](https://github.com/natydasilva/GSOC2017-metawrite/blob/master/Tab1gen.png)  -->
+![Panel 1 in shinyapp, in this panel a dynamic report can be write, saved and downloaded](Tab1gen.png)
+
+At the end of the tabset should be available two options, one to submit the version and other two download the pdf version that should be compile using **knitr**:
+
+ <!-- ![Panel 1 in shinyapp, shows the bottom part of the page where the download and save options are available](https://github.com/natydasilva/GSOC2017-metawrite/blob/master/tab1down.png)  -->
+ ![Panel 1 in shinyapp, shows the bottom part of the page where the download and save options are available](tab1down.png) 
+
+After submission the first tabset will be updated and a version selection will be available 
+
+
+ <!-- ![Panel 1 after first submission, a `selectInput` will be available with the different report versions. The user will be able to change and update old reports. update](https://github.com/natydasilva/GSOC2017-metawrite/blob/master/tab1version.png) -->
+
+![Panel 1 after first submission, a `selectInput` will be available with the different report versions. The user will be able to change and update old reports. update](tab1version.png)
 
 3. Visualization and summary information
 
- With the model results from pairwise meta-analysis or network meta analysis (if this is available) summary results will be presented. A second tabset containing the results 
- With the model information some interactive visualizations will be available using **ggplot2**, and **plotly** to get interactive graphs. All the visualization will be presented in a dashbard using **shiny**. 
+ With the model results from pairwise meta-analysis or network meta analysis (if this is available) summary results will be presented. A second tabsetPanel containing the results 
+ With the model information some interactive visualizations will be available using **ggplot2**, and **plotly** to get interactive graphs. All the visualization will be presented in a dashboard using **shiny**. 
+
+
+In the following screenshot I present an initial visualization for a pairwise meta-analysis. These are a forest plot and a funnel plot.
+ <!-- ![Panel 2 for pairwise comparison meta-analysis . In this panel a basic visualization is presented, forest and funnel plot.](https://github.com/natydasilva/GSOC2017-metawrite/blob/master/Tab2.png) -->
+
+ ![Panel 2 for pairwise comparison meta-analysis . In this panel a basic visualization is presented, forest and funnel plot.](Tab2.png)
+
+If network meta-analysis applies for the specific case, some visualizations will be available to summarize the model results. A  possible data visualization for the network meta-analysis is shown below using  **geomnet**  and **plotly** I can direct translate a **ggplot2** object into an interactive graph.
+
+
+<!-- ![Panel 2 with an interactive  network plot using geomnet and plotly](https://github.com/natydasilva/GSOC2017-metawrite/blob/master/Tab3.png) -->
+
+[Panel 2 with an interactive  network plot using geomnet and plotly](Tab3.png) -->
 
 
 The final user will get a web application using **shiny** with three modules or tabsets as a main result, 
 
--	Report: this first tablset will display an environment to make an interactive report using kntr. You will write your update report in the web application to be available online and the user can download the report in different formats as they need it. Also the previous reports will be available to be modified using the shiny interactive functionalities.
+-	Report: this first `tablsetPanel` will display an environment to make an interactive report using kntr. You will write your update report in the web application to be available online and the user can download the report in different formats as they need it. Also the previous reports will be available to be modified using the shiny interactive functionalities.
 
 -	Pairwise meta-analysis: In this second tabset the main results from a pairwise meta-analysis will be displayed. The user can interact in the application to self discover the main results, selecting the update results and treatments to explore. Model fit and interactive plots will be available.
 
 -	Network meta-analysis: If network meta analysis is needed this third tabset will be available. The main results from a network meta-analysis will be displayed. The user can interact in the application to self discover the main results, selecting the update results to explore. Model fit and interactive plots will be available.
 
 
-![](https://github.com/natydasilva/GSOC2017-metawrite/blob/master/tab1version.png)
+<!-- ![Shiny app with the three panels](https://github.com/natydasilva/GSOC2017-metawrite/blob/master/taball.png)  -->
+![Shiny app with the three panels](taball.png) 
 
-<!-- Describe in detail your plan for completing the work.  What functions will be written, how and when will you do design, how will you verify the results of your coding?  The sub-section headings below are examples only.  Each project is different, please make your application appropriate to the work you propose.   -->
-
-<!-- Describe perceived obstacles and challenges, and how you plan to overcome them. -->
-
-<!-- The best R GSoC applications tend to be 10+ pages printed. Planning is a key part of a successful project, and demonstrates to the mentors that you are qualified and engaged. -->
 
 
 ## Timeline
 
-<!-- (consult GSOC schedule) -->
-
-<!-- Provide a detailed timeline of how you plan to spend your summer.  Don't leave testing and documentation for last, as that's almost a guarantee of a failed project.  -->
-
-<!-- Make sure to identify what you plan to accomplish in each month of the project.  Google has asked organizations to be more directive about milestones. Also be sure to identify what you will accomplish between acceptance and the official start of coding. (Hint: establishing your build environment and researching existing work shouldn't wait till project start) -->
-
-<!-- What is your contingency plan for things not going to schedule? We understand things change, but how are you planning to address changes and setbacks? -->
-
-<!-- If you have other time commitments that will interfere with GSoC, we highly recommend explaining how you will front-load the work before coding start or work extra early on to build a cushion! -->
-
-
-
 Student coding period 30 May - 29 Aug
 
 Period        | Activity
-------------- | ------------------------------------------
-30 May - 30 June  | Write helper functions to data transformation and model results computations. Initial work in Visualization and summary information.
+------------------ | ------------------------------------------
+30 May - 30 June  | Write helper functions to data transformation and model results computations. Initial work on visualization and summary information.
 30 June - 24 July | Writing dynamic reports and finish with visualization and summary information
 24 July - 29 Aug | Include all the pieces in the final shiny app
 
+It is important to mention that I will write the package documentation and vignette simultaneously with the development of each function.
+The package will be tested in each stage and I will use **Travis CI** to build and test my package that will be  hosted at GitHub.
 
 ## Management of Coding Project
 
-The project will be available on my github account  and 
-
-<!-- How do you propose to ensure code is submitted / tested? -->
-
-<!-- How often do you plan to commit?  What changes in commit behavior would indicate a problem? -->
-
+The project will be available on my github account: https://github.com/natydasilva/metawRite
+This will be a convenient way to share the updates with my mentors and they can make the comments and suggestions there.
 
 ## Test
 
-<!-- Describe the qualification test that you have submitted to you project mentors.  If feasible, include code, details, output, and example of similar coding problems that you have solved. -->
-In this link you will find my advance in the project. 
-[Natalia da Silva solution]https://github.com/natydasilva/metawRite
+In this link you will find my advance in the project https://github.com/natydasilva/metawRite .
 
 ## Anything Else
 
-I would love to have the GSOC experience to share my knowledge  with my future colleagues and students
+I would love to be accepted in GSOC2017 for this project. I think will be a great experience that I would like to share with my colleagues and students in the future. 
+

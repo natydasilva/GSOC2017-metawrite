@@ -1,0 +1,107 @@
+---
+title: "GSOC2017"
+output: pdf_document
+---
+
+
+## Project info
+
+Project title: metawRite, Meta analysis update package, LSR (Living systematic review). 
+
+Project short title (30 characters): metawRite
+
+URL of project idea page: 
+[metawRite-project](https://github.com/rstats-gsoc/gsoc2017/wiki/metawRite:-Meta-analysis-update-package,-LSR-(Living-systematic-review>))
+
+## Bio of Student 
+
+I'm a Ph.D. candidate in Statistics at Iowa State University (ISU) working with Dianne Cook and Heike Hofmann.
+My Ph.D. project is about bagged projection methods for supervised classification in big data.
+I have been working in R for a long time, and I have experience doing shiny 
+([shiny_PPforest](https://natydasilva.shinyapps.io/Shinyppforest/), [shiny_mosquito](https://natydasilva.shinyapps.io/shiny_msq/)and [shiny_poverty](https://ndasilva.shinyapps.io/shiny-pov/) and R packages ([PPforest](https://github.com/natydasilva)). You can find some of my recent project on my github account ([My-Github](https://github.com/natydasilva)).
+
+I have completed my M.S. in Statistics at Iowa State University working in network meta-analysis with Bayesian inference in Spring 2014. From my M.S. thesis I have published the paper "Mixed treatment comparison meta-analysis of porcine circovirus type 2 (PCV2) vaccines used in piglets" available in 
+([paper-meta-analysis](http://www.sciencedirect.com/science/article/pii/S0167587714003444)).
+I have worked in different meta-analysis projects as an RA at ISU, in my webpage you can find other publications I have in this topic ([My-webpage](http://ndasilva.public.iastate.edu/page.html))
+
+I qualifies for this project because I have experience in meta-analysis and in R and I would like to work in this project as  part of GSOC 2017.
+
+## Contact Information 
+
+Student name: Natalia da Silva
+
+Student postal address: 118 University Village unit E
+
+Telephone(s): 515-357-3777 
+
+Email(s): ndasilva@iastate.edu
+
+Other communications channels: Skype pacocuak 
+
+## Student affiliation
+
+Institution: Iowa State University
+
+Program: PhD in Statistics
+
+Stage of completion: I'm PhD candidate and I'm writing the dissertation.
+
+Contact to verify: Dianne Cook dicook@monash.edu 
+
+## Mentors
+
+Mentor names: Heike Hofmann and Annette O'Connor 
+
+Mentor emails: hofmann@iastate.edu, oconnor@iastate.edu 
+
+I have  weekly meetings with the mentors at ISU to work in this project.
+
+## Coding Plan and Methods
+
+### Introduction
+
+Systematic reviews are an approach used by public health agencies such as the World Health Organization to understand how treatments are effective and approach to disease control. Systematic reviews  in the literature often include a meta-analysis that summarizes the findings of multiple studies. It is critical that such reviews are updated rapidly as new scientific information becomes available, so the best evidence is used for the best advise.  However, the current peer-reviewed journal based approach to publishing systemic reviews means that reviews can rapidly become out of date and updating is often delayed by the publication model. Living systematic reviews have been proposed as a new approach to dealing with this problem. The main concept of a living review is to enable rapid updating of systematic reviews as new research becomes available, while also ensuring a transparent process and reproducible review. 
+
+**metawRite** package have the objective to simplify the review, write and update in a systematic review. This package will be an approach to do a living systematic review easily and available for all.
+ The  goal is to combine in the package, the writing and analysis of the review that also enables versioning and updating.This package  will allow an easy and effective way to display a living systematic review available in a web-based display. 
+
+Three main tasks are needed to have an effective living systematic review; the ability to produce dynamic reports, availability online with an interface that enables end users to understand the data and the ability to efficiently update the review(and any meta-analyis) with new research seamless.
+
+
+ The package we propose will cover these tree task integrated in a friendly web based environment for the final user. This package is not a new meta analysis package instead will be flexible enough to read different output models from the most used meta-analysis packages in R, organize the information and display the results in an user driven interactive dash board. The main function of this package will display a modern web-based application for update a living systematic review.
+This package combines the power of R and shiny to get a dynamic reports and up to date meta-analysis results remaining user friendly. The package has the potential to be used by a large number of groups that conduct and update systematic review such as What Works clearing house (WWC) – which reviews education interventions, Campbell Collaboration (cambell-colalboration) that includes reviews on topics such as social and criminal justice issues and many other social science topics, the Collaboration for Environment Evidence (environment-evidence) and food production and security (syreaf). 
+
+Describe in detail your plan for completing the work.  What functions will be written, how and when will you do design, how will you verify the results of your coding?  The sub-section headings below are examples only.  Each project is different, please make your application appropriate to the work you propose.  
+
+Describe perceived obstacles and challenges, and how you plan to overcome them.
+
+The best R GSoC applications tend to be 10+ pages printed. Planning is a key part of a successful project, and demonstrates to the mentors that you are qualified and engaged.
+
+
+## Timeline
+
+<!-- (consult GSOC schedule) -->
+
+<!-- Provide a detailed timeline of how you plan to spend your summer.  Don't leave testing and documentation for last, as that's almost a guarantee of a failed project.  -->
+
+<!-- Make sure to identify what you plan to accomplish in each month of the project.  Google has asked organizations to be more directive about milestones. Also be sure to identify what you will accomplish between acceptance and the official start of coding. (Hint: establishing your build environment and researching existing work shouldn't wait till project start) -->
+
+<!-- What is your contingency plan for things not going to schedule? We understand things change, but how are you planning to address changes and setbacks? -->
+
+<!-- If you have other time commitments that will interfere with GSoC, we highly recommend explaining how you will front-load the work before coding start or work extra early on to build a cushion! -->
+
+## Management of Coding Project
+
+<!-- How do you propose to ensure code is submitted / tested? -->
+
+<!-- How often do you plan to commit?  What changes in commit behavior would indicate a problem? -->
+
+
+## Test
+
+<!-- Describe the qualification test that you have submitted to you project mentors.  If feasible, include code, details, output, and example of similar coding problems that you have solved. -->
+
+
+## Anything Else
+
+I would love to have the GSOC experience to share my knowledge  with my future colleagues and students

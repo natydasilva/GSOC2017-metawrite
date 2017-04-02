@@ -9,7 +9,7 @@ output:
 
 Project title: metawRite, Meta analysis update package, LSR (Living systematic review). 
 
-Project short title (30 characters): metawRite
+Project short title (30 characters): metawRitedasd
 
 URL of project idea page: 
 [metawRite-project](https://github.com/rstats-gsoc/gsoc2017/wiki/metawRite:-Meta-analysis-update-package,-LSR-(Living-systematic-review>))

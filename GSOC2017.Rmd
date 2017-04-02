@@ -1,6 +1,8 @@
 ---
 title: "GSOC2017"
-output: pdf_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 
@@ -101,6 +103,9 @@ Here the challenge will be the persistent storage for the different versions. Th
 The final user will be able to write the report in a shiny app, the first *tabsetPanel* will contain a standardize report structure defined in the *ui* using *textAreaInput*. 
 In this tabsetPanel the user will write the report using **knitr**, save it and be able to download the pdf file. After the first submission the user will be able to see the previous report versions and change it as they need it. To do this I will use **shinyjs** package. 
 
+This first tabset should look like:
+
+https://github.com/natydasilva/GSOC2017-metawrite/blob/master/Tab1gen.png
 
 3. Visualization and summary information
 
@@ -116,6 +121,8 @@ The final user will get a web application using **shiny** with three modules or 
 
 -	Network meta-analysis: If network meta analysis is needed this third tabset will be available. The main results from a network meta-analysis will be displayed. The user can interact in the application to self discover the main results, selecting the update results to explore. Model fit and interactive plots will be available.
 
+
+![](https://github.com/natydasilva/GSOC2017-metawrite/blob/master/tab1version.png)
 
 <!-- Describe in detail your plan for completing the work.  What functions will be written, how and when will you do design, how will you verify the results of your coding?  The sub-section headings below are examples only.  Each project is different, please make your application appropriate to the work you propose.   -->
 

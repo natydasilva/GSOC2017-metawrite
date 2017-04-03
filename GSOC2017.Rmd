@@ -181,5 +181,5 @@ In this link you will find my advance in the project https://github.com/natydasi
 
 I would love to be accepted in GSOC2017 for this project. I think will be a great experience that I would like to share with my colleagues and students in the future. 
 
-\newpage
+
 

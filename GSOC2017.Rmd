@@ -2,7 +2,6 @@
 title: "GSOC2017"
 output:
   pdf_document: default
-  html_document: default
 urlcolor: blue
 ---
 
@@ -137,7 +136,7 @@ If network meta-analysis applies for the specific case, some visualizations will
 
 <!-- ![Panel 2 with an interactive  network plot using geomnet and plotly](https://github.com/natydasilva/GSOC2017-metawrite/blob/master/Tab3.png) -->
 
-![Panel 2 with an interactive  network plot using geomnet and plotly](Tab3.png) -->
+![Panel 2 with an interactive  network plot using geomnet and plotly](Tab3.png) 
 
 
 The final user will get a web application using **shiny** with three modules or tabsets as a main result, 
@@ -153,7 +152,6 @@ The final user will get a web application using **shiny** with three modules or 
 ![Shiny app with the three panels](taball.png) 
 
 
-\newpage
 
 ## Timeline
 
@@ -183,13 +181,5 @@ In this link you will find my advance in the project https://github.com/natydasi
 
 I would love to be accepted in GSOC2017 for this project. I think will be a great experience that I would like to share with my colleagues and students in the future. 
 
-
-
-
-
-## Management of Coding Project dfasdf
-
-
-dfasdfads
-
+\newpage
 
